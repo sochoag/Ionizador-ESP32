@@ -1,18 +1,21 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#define DEBUG_L 1
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+#include "debug_level.h"
+
+void setup()
+{
+  Serial.begin(115200);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+void loop()
+{
+  printMessage("Este es un mensaje de prueba\n");
+  printError("¡Esto es un error!\n");
+  printWarning("Advertencia: ¡Ten cuidado!\n");
+  printInfo("Información importante.\n");
+  printDebug("Debugging...\n");
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  delay(1000);
 }
