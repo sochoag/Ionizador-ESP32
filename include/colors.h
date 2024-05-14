@@ -2,6 +2,7 @@
 #define COLORS_H
 
 // RESET
+
 #define fontReset "\e[0m"
 
 // COLORS - REGULAR
@@ -43,7 +44,5 @@
 #define backgroundPurple "\e[45;35m"
 #define backgroundCyan "\e[46;36m"
 #define backgroundWhite "\e[47;37m"
-
-#define Serial .println
 
 #endif

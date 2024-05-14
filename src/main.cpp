@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define DEBUG_L 1
+#define DEBUG_LEVEL DEBUG
 
 #include "debug_level.h"
 
@@ -11,11 +11,11 @@ void setup()
 
 void loop()
 {
-  printMessage("Este es un mensaje de prueba\n");
-  printError("¡Esto es un error!\n");
-  printWarning("Advertencia: ¡Ten cuidado!\n");
-  printInfo("Información importante.\n");
-  printDebug("Debugging...\n");
+  debugMsg(ERROR, "Loop", "Error");
+  debugMsg(WARNING, "Loop", "Warning");
+  debugMsg(MESSAGE, "Loop", "Message");
+  debugMsg(INFO, "Loop", "Info");
+  debugMsg(DEBUG, "Loop", "Debug");
 
   delay(1000);
 }
