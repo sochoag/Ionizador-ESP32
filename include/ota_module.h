@@ -1,5 +1,5 @@
-#ifndef OTA_MODULE
-#define OTA_MODULE
+#ifndef OTA_MODULE_H
+#define OTA_MODULE_H
 
 #include <WiFi.h>
 #include <ESPmDNS.h>
@@ -25,7 +25,7 @@ void OTAsetup()
   ArduinoOTA.setHostname("Ionizer"); // * Hostname defaults to esp3232-[MAC]
 
   // ArduinoOTA.setPassword("password"); // * No authentication by default
-  // ArduinoOTA.setPasswordHash("424ea8c7cf6c544f2ad23fd626bc3e5c"); // * Password can be set with it's md5 value as well
+  ArduinoOTA.setPasswordHash(OTA_HASH); // * Password can be set with it's md5 value as well
 
   ArduinoOTA
       .onStart([]()

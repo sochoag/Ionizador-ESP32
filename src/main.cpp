@@ -3,7 +3,7 @@
 #define DEBUG_LEVEL TRACE
 
 #include "colors.h"
-#include "debug_level.h"
+#include "debug_module.h"
 #include "ota_module.h"
 
 void setup()
