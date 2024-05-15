@@ -1,7 +1,8 @@
 #include <Arduino.h>
 
-#define DEBUG_LEVEL DEBUG
+#define DEBUG_LEVEL TRACE
 
+#include "colors.h"
 #include "debug_level.h"
 
 void setup()
@@ -11,11 +12,12 @@ void setup()
 
 void loop()
 {
+  debugClear();
   debugMsg(ERROR, "Loop", "Error");
-  debugMsg(WARNING, "Loop", "Warning");
-  debugMsg(MESSAGE, "Loop", "Message");
-  debugMsg(INFO, "Loop", "Info");
-  debugMsg(DEBUG, "Loop", "Debug");
+  debugMsg(WARNING, "Device", "Warning");
+  debugMsg(INFO, "Other", "Info");
+  debugMsg(DEBUG, "Func", "Debug");
+  debugMsg(TRACE, "LED", "Trace");
 
   delay(1000);
 }

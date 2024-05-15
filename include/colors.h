@@ -1,6 +1,34 @@
 #ifndef COLORS_H
 #define COLORS_H
 
+// Regular 0
+// Bold 1
+// Muted 3
+// Italic 3
+// Underlined 4
+// Background 7
+// Strikethrough 9
+// Doubleunderlined 21
+// Select Background 40-47
+// Overlined 53
+// High Intensity Background 100 - 107
+
+byte styles[] = {0, 1, 2, 3, 4, 5, 6, 7, 9, 21, 40, 41, 42, 43, 44, 46, 46, 47, 53, 100, 101, 102, 103, 104, 105, 106, 107};
+
+void colorTable()
+{
+  Serial.printf("\e[0m\n\e[1;32mTabla resumen ANSI\e[0m");
+  for (byte j = 0; j < sizeof(styles); j++)
+  {
+    Serial.printf("\n%d ->", styles[j]);
+
+    for (int i = 30; i < 38; i++)
+    {
+      Serial.printf("\e[%d;%dm %d \e[0m", styles[j], i, i);
+    }
+  }
+}
+
 // RESET
 
 #define fontReset "\e[0m"
