@@ -4,6 +4,7 @@
 
 #include "colors.h"
 #include "debug_level.h"
+#include "ota_module.h"
 
 void setup()
 {
@@ -14,12 +15,4 @@ void setup()
 void loop()
 {
   OTAloop();
-  // debugClear();
-  // debugMsg(ERROR, "Loop", "Error");
-  // debugMsg(WARNING, "Device", "Warning");
-  // debugMsg(INFO, "Other", "Info");
-  // debugMsg(DEBUG, "Func", "Debug");
-  // debugMsg(TRACE, "LED", "Trace");
-
-  // delay(1000);
 }
