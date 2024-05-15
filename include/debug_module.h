@@ -1,5 +1,5 @@
-#ifndef DEBUG_LEVEL_H
-#define DEBUG_LEVEL_H
+#ifndef DEBUG_MODULE
+#define DEBUG_MODULE
 
 #define RESET_COLOR "\e[0m"
 #define ERROR_COLOR "\e[0;31m[E]"
