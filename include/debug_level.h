@@ -16,29 +16,29 @@
 #define DEBUG 4
 #define TRACE 5
 
-#define debugMsg(severity, tag, message)                           \
-  if (DEBUG_LEVEL >= severity)                                     \
-  {                                                                \
-    switch (severity)                                              \
-    {                                                              \
-    case ERROR:                                                    \
-      Serial.printf(ERROR_COLOR TAG_COLOR(tag) "%s\n", message);   \
-      break;                                                       \
-    case WARNING:                                                  \
-      Serial.printf(WARNING_COLOR TAG_COLOR(tag) "%s\n", message); \
-      break;                                                       \
-    case INFO:                                                     \
-      Serial.printf(INFO_COLOR TAG_COLOR(tag) "%s\n", message);    \
-      break;                                                       \
-    case DEBUG:                                                    \
-      Serial.printf(DEBUG_COLOR TAG_COLOR(tag) "%s\n", message);   \
-      break;                                                       \
-    case TRACE:                                                    \
-      Serial.printf(TRACE_COLOR TAG_COLOR(tag) "%s\n", message);   \
-      break;                                                       \
-    default:                                                       \
-      break;                                                       \
-    }                                                              \
+#define debugMsg(severity, tag, format, ...)                                  \
+  if (DEBUG_LEVEL >= severity)                                                \
+  {                                                                           \
+    switch (severity)                                                         \
+    {                                                                         \
+    case ERROR:                                                               \
+      Serial.printf(ERROR_COLOR TAG_COLOR(tag) format "\n", ##__VA_ARGS__);   \
+      break;                                                                  \
+    case WARNING:                                                             \
+      Serial.printf(WARNING_COLOR TAG_COLOR(tag) format "\n", ##__VA_ARGS__); \
+      break;                                                                  \
+    case INFO:                                                                \
+      Serial.printf(INFO_COLOR TAG_COLOR(tag) format "\n", ##__VA_ARGS__);    \
+      break;                                                                  \
+    case DEBUG:                                                               \
+      Serial.printf(DEBUG_COLOR TAG_COLOR(tag) format "\n", ##__VA_ARGS__);   \
+      break;                                                                  \
+    case TRACE:                                                               \
+      Serial.printf(TRACE_COLOR TAG_COLOR(tag) format "\n", ##__VA_ARGS__);   \
+      break;                                                                  \
+    default:                                                                  \
+      break;                                                                  \
+    }                                                                         \
   }
 
 #define debugClear() Serial.printf("\e[0m\e[2J\e[H");
