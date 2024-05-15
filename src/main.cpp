@@ -8,6 +8,7 @@
 
 void setup()
 {
+  OTAsetup();
   Serial.begin(115200);
   OTAsetup();
 }
